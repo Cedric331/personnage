@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Arme{% endblock %}
+
+{% block titre %}Arme {% endblock %}
+
+{% block body %}
+
+<div class="container">
+   <table class="table">
+      <thead>
+         <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            <th scope="col">Dégât</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td><img src="{{ asset(arme.image)}}" /></td>
+            <td><a href="{{ path('show_arme', {'name': arme.nom|lower}) }}">{{arme.nom}}</a></td>
+            <td>{{arme.description}}</td>
+            <td>{{arme.degat}}</td>
+         </tr>
+      </tbody>
+   </table>
+
+</div>
+{% endblock %}

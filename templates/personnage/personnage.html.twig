@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Personnages!{% endblock %}
+
+{% block titre %}Personnages{% endblock %}
+
+{% block body %}
+<div class="container">
+   <table class="table">
+      <thead>
+         <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Age</th>
+            <th scope="col">Sexe</th>
+            <th scope="col">Force</th>
+            <th scope="col">Agilité</th>
+            <th scope="col">Intelligence</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+
+            <td><img src="{{ asset(player.image)}}" /></td>
+            <td>{{player.pseudo}}</td>
+            <td>{{player.age}}</td>
+            <td> {% if player.sexe %}
+                  Homme
+               {% else %}
+                  Femme
+               {% endif %}</td>
+            <td>{{player.carac.force}}</td>
+            <td>{{player.carac.agilite}}</td>
+            <td>{{player.carac.int}}</td>
+         </tr>
+      </tbody>
+   </table>
+
+</div>
+
+{% endblock %}
